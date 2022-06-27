@@ -1,0 +1,13 @@
+numpy
+pandas
+ipywidgets
+matplotlib
+ipykernel
+matplotlib
+pathlib
+astropy
+astropy_healpix
+astroquery
+pyesasky 
+seaborn
+GaiaXPy

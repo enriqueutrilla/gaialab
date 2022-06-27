@@ -1,0 +1,23 @@
+title: Gaia JupyterLab datalab
+alternateName: GaiaLab
+abstract: |
+  Datalab with the tools to explore the Gaia DR3 catalogue
+description: |
+  This datalab is based on JupyterLab, and has been preconfigured 
+  with the tools used to access Gaia data (astropy) and manipulate 
+  the continuous XP spectra (GaiaXPy). 
+  All the tutorial notebooks prepared for Data Release 3 (DR3) are
+  also available in this datalab for convenience.
+distribution.license: Apache 2.0
+contactPoint:
+  email: eutrilla@sciops.esa.int
+  organisation-name: DPAC
+language: english
+instrument: None
+mission: Gaia
+keywords: Gaia
+thumbnailUrl: https://raw.githubusercontent.com/kalaschsoyuz/kalaschsoyuz.github.io/main/jupyterlogo2.svg
+citation: None
+version: 1.0.0
+requiredDataset: 
+- Gaia
