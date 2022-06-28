@@ -8,6 +8,9 @@ wait_interface & # emit state change to API when the interface is ready
 ln -s /media/home /home/$USER
 ln -s /media/notebooks /home/$USER/notebooks
 
+debug "Contents of /media"
+debug `ls -l /media`
+ls -l /media
 debug "Before changing permissions"
 debug `ls -l /media/home`
 mkdir -p /media/home/.local
