@@ -19,5 +19,5 @@ keywords: Gaia
 thumbnailUrl: https://raw.githubusercontent.com/kalaschsoyuz/kalaschsoyuz.github.io/main/jupyterlogo2.svg
 citation: |
   If you use public Gaia data in your paper, please take note of our guide on how to cite and acknowledge Gaia:
-https://www.cosmos.esa.int/web/gaia-users/credits
+  https://www.cosmos.esa.int/web/gaia-users/credits
 version: 0.1.0
