@@ -1,4 +1,4 @@
-title: Gaia JupyterLab datalab
+title: Gaia DR3 Jupyter Datalab
 alternateName: GaiaLab
 abstract: |
   Datalab with the tools to explore the Gaia DR3 catalogue
@@ -17,7 +17,7 @@ instrument: None
 mission: Gaia
 keywords: Gaia
 thumbnailUrl: https://raw.githubusercontent.com/kalaschsoyuz/kalaschsoyuz.github.io/main/jupyterlogo2.svg
-citation: None
-version: 1.0.0
-requiredDataset: 
-- Gaia
+citation: |
+  If you use public Gaia data in your paper, please take note of our guide on how to cite and acknowledge Gaia:
+https://www.cosmos.esa.int/web/gaia-users/credits
+version: 0.1.0
