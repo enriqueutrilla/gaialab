@@ -8,6 +8,6 @@ RUN apt-get update \
 
 COPY *.ipynb /media/notebooks/tutorials/
 COPY run.sh /opt/
-RUN chmod og+rwx /media/home
+RUN mkdir -p /media/home && chmod og+rwx /media/home
 RUN chmod +x /opt/run.sh
 CMD   ["/sbin/tini", "--", "/opt/run.sh"]
