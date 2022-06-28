@@ -8,6 +8,6 @@ pathlib
 astropy
 astropy_healpix
 astroquery
-pyesasky 
+#pyesasky 
 seaborn
 GaiaXPy
