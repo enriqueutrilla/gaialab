@@ -7,6 +7,8 @@ wait_interface & # emit state change to API when the interface is ready
 #Create user home directory as a symlink to the user persistent area volume (pending correction related to SEPPPCR-191).
 ln -s /media/home /home/$USER
 ln -s /media/notebooks /home/$USER/notebooks
+
+mkdir -p /media/home/.local
 chmod -R go+rwx /media/home/.local
 cd $HOME
 
