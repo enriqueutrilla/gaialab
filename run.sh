@@ -8,8 +8,11 @@ wait_interface & # emit state change to API when the interface is ready
 ln -s /media/home /home/$USER
 ln -s /media/notebooks /home/$USER/notebooks
 
+debug `ls -l /media/home`
 mkdir -p /media/home/.local
 chmod -R go+rwx /media/home/.local
+debug `ls -l /media/home`
+
 cd $HOME
 
 export JUPYTER_CONFIG_DIR=$HOME/.jupyterlab-$DATALAB_ID
