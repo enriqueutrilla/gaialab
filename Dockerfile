@@ -7,7 +7,11 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 COPY *.ipynb /media/notebooks/tutorials/
+
 COPY run.sh /opt/
 RUN mkdir -p /media/home && chmod og+rwx /media/home
+RUN ls -l /media
+
 RUN chmod +x /opt/run.sh
+
 CMD   ["/sbin/tini", "--", "/opt/run.sh"]
