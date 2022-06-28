@@ -7,7 +7,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 COPY *.ipynb /media/notebooks/tutorials/
-USER $USER
-CMD [ "sh", "-c", "jupyter lab --ip 0.0.0.0 --port=$IF_main_port --allow-root --notebook-dir=/media/notebooks/ --NotebookApp.password='' --NotebookApp.token=''"]
-
-#CMD [ "sh", "-c", "jupyter notebook --ip 0.0.0.0 -NotebookApp.base_url=$PATH_PREFIX --NotebookApp.password='' --NotebookApp.token=''" ] ## note the $PATH_PREFIX (check with Louis)
+COPY run.sh /opt/
+RUN chmod +x /opt/run.sh
+CMD   ["/sbin/tini", "--", "/opt/run.sh"]
