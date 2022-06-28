@@ -1,4 +1,4 @@
-FROM registry.esa.int:5020/sepp/jl_base:latest
+FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 RUN apt-get update \
