@@ -3,10 +3,10 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 RUN apt-get update \
   && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
-  && apt-get remove python3-pip python-pip -y \
+  && apt-get remove python3-pip -y \
   && update-alternatives --remove python3 /usr/bin/python3 \
   && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 10 \
-  && apt-get install python-pip=9.0.1-2.3~ubuntu1.18.04.5 python3-pip=9.0.1-2.3~ubuntu1.18.04.5 -y \
+  && apt-get install python3-pip=9.0.1-2.3~ubuntu1.18.04.5 -y \
   && echo "Installing python dependencies" \
   && pip3 install --no-cache-dir -r /tmp/requirements.txt \
   && apt-get clean \
