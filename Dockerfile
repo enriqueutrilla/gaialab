@@ -6,12 +6,10 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-COPY *.ipynb /media/notebooks/tutorials/
+COPY *.ipynb /media/tutorials/.
+COPY *.png /media/tutorials/images/.
 
 COPY run.sh /opt/
-RUN mkdir -p /media/home && chmod og+rwx /media/home
-RUN ls -l /media
-
 RUN chmod +x /opt/run.sh
 
 CMD   ["/sbin/tini", "--", "/opt/run.sh"]
