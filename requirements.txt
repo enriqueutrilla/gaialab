@@ -5,7 +5,7 @@ matplotlib
 ipykernel
 matplotlib
 pathlib
-astropy
+astropy:5.1
 astropy_healpix
 astroquery
 #pyesasky 
