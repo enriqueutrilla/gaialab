@@ -5,6 +5,7 @@ RUN apt-get update \
   && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
   && rm /usr/bin/python3 \
   && ln -s /usr/bin/python3.8 /usr/bin/python3 \ 
+  && apt-get remove python3-pip \
   && apt-get install python3-pip=9.0.1-2.3~ubuntu1.18.04.5 -y \
   && pip3 install --no-cache-dir -r /tmp/requirements.txt \
   && apt-get clean \
