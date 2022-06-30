@@ -25,8 +25,7 @@ api_emit_running
 if gosu $UID:$UID bash -c "HOME=/home/$USER jupyter lab --ip=0.0.0.0 --port=$IF_main_port \
   --NotebookApp.base_url=\"/datalabs/$IF_main_id\" \
   --NotebookApp.token='' --NotebookApp.password='' \
-  --NotebookApp.allow_origin='*' \
-  --LabApp.default_url='/lab/tree/tutorials/README.ipynb "
+  --NotebookApp.allow_origin='*'"
 then
   api_emit_finished
 else
