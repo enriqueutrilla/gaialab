@@ -6,8 +6,8 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-COPY *.ipynb /media/tutorials/.
-COPY *.png /media/tutorials/images/.
+COPY *.ipynb /media/tutorials/
+COPY *.png /media/tutorials/images/
 
 COPY run.sh /opt/
 RUN chmod +x /opt/run.sh
