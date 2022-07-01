@@ -8,7 +8,7 @@ RUN apt-get update \
   && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 10 \
 #  && apt-get install python3-pip=9.0.1-2.3~ubuntu1.18.04.5 -y \
   && echo "Path: $PATH" \
-  && python3.8 -m pip install --upgrade python3-pip=9.0.1-2.3~ubuntu1.18.04.5 \
+  && python3.8 -m pip install --no-cache-dir --upgrade python3-pip==9.0.1-2.3~ubuntu1.18.04.5 \
   && echo "Installing python dependencies" \
   && pip3 install --no-cache-dir -r /tmp/requirements.txt \
   && apt-get clean \
