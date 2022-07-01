@@ -53,16 +53,16 @@ RUN echo "Updating python to 3.8" \
   astroquery==0.4.5 \
   astropy==5.0.1 \
 #  && jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build \
-  && jupyter labextension install jupyter-matplotlib --no-build \
-  && jupyter labextension install jupyter-leaflet --no-build \
-  && jupyter lab build --minimize=False \
-  && python -m pip --no-cache-dir install pyesasky==1.9.2 \
-  && jupyter labextension install pyesasky --no-build \
-  && jupyter lab build --minimize=False \
-  && jupyter nbextension install --py pyesasky --sys-prefix \
-  && jupyter nbextension enable --py pyesasky --sys-prefix \
-  && jupyter lab build --minimize=False \
-  && ln -s /opt/miniconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
+#  && jupyter labextension install jupyter-matplotlib --no-build \
+#  && jupyter labextension install jupyter-leaflet --no-build \
+#  && jupyter lab build --minimize=False \
+#  && python -m pip --no-cache-dir install pyesasky==1.9.2 \
+#  && jupyter labextension install pyesasky --no-build \
+#  && jupyter lab build --minimize=False \
+#  && jupyter nbextension install --py pyesasky --sys-prefix \
+#  && jupyter nbextension enable --py pyesasky --sys-prefix \
+#  && jupyter lab build --minimize=False \
+#  && ln -s /opt/miniconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
 #  && apt-get remove python3.6 -y \
 #  && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
 #  && apt-get remove python3-pip -y \
