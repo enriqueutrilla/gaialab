@@ -2,6 +2,18 @@ FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 
+RUN apt-get update \
+  && apt-get install --no-install-recommends -y \
+  gcc g++ make \
+  build-essential --no-install-recommends apt-utils \
+  zip unzip curl git man wget make emacs vim \
+  libffi-dev libzbar-dev libzbar0 \
+  nodejs yarn\
+  software-properties-common coreutils \
+  python-xvfbwrapper python3-pytest-xvfb python3-xvfbwrapper xvfb \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
 RUN curl -fsSL -o Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
   && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda \
   && rm -rf Miniconda3-latest-Linux-x86_64.sh
@@ -17,7 +29,6 @@ RUN echo "Updating python to 3.8" \
   && conda init \
   && conda config --append channels conda-forge \
   && conda install -c anaconda python=3.8 \
-  && conda install -c conda-forge nodejs=12.0.0 \
   && python -m pip --no-cache-dir install \
   jupyterlab==3.2.8 \
   jupyter_client==7.1.1 \
