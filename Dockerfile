@@ -1,9 +1,19 @@
 FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
-RUN apt-get update \
-  && /opt/miniconda/bin/conda install -c anaconda python=3.8 \
-  && /opt/miniconda/bin/conda update --all \
+
+ENV PATH /opt/miniconda/bin:$PATH
+RUN echo "Updating python to 3.8"
+  && echo "/opt" \
+  && ls -la /opt \
+  && echo "/opt/miniconda" \
+  && ls -la /opt/miniconda \
+  && echo "/opt/miniconda/bin" \
+  && ls -la /opt/miniconda/bin \ 
+  && conda init \
+  && conda config --append channels conda-forge \
+  && conda install -c anaconda python=3.8 \
+  && conda update --all \
 #  && apt-get remove python3.6 -y \
 #  && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
 #  && apt-get remove python3-pip -y \
