@@ -2,8 +2,8 @@ FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 RUN apt-get update \
-  && conda install -c anaconda python=3.8 \
-  && conda update --all \
+  && /opt/miniconda/bin/conda install -c anaconda python=3.8 \
+  && /opt/miniconda/bin/conda update --all \
 #  && apt-get remove python3.6 -y \
 #  && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
 #  && apt-get remove python3-pip -y \
