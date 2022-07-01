@@ -17,7 +17,46 @@ RUN echo "Updating python to 3.8" \
   && conda init \
   && conda config --append channels conda-forge \
   && conda install -c anaconda python=3.8 \
-  && conda update --all \
+  && python -m pip --no-cache-dir install \
+  jupyterlab==3.2.8 \
+  jupyter_client==7.1.1 \
+  terminado==0.12.1 \
+  jupyterlab-git==0.34.2 \
+  jupyterlab_theme_solarized_dark==2.0.1 \
+  qtconsole==5.2.2 \
+  IPython==8.0.0 \
+  ipywidgets==7.6.5 \
+  jupyter_core==4.9.1 \
+  jupyter_server==1.13.3 \
+  nbclient==0.5.10 \
+  nbconvert==6.4.0 \
+  nbformat==5.1.3 \
+  notebook==6.4.7 \
+  traitlets==5.1.1 \
+  matplotlib==3.5.1 \
+  pandas==1.4.0 \
+  ipykernel==6.7.0 \
+  ipyleaflet==0.15.0 \
+  qtpy==2.0.0 \
+  ipywidgets==7.6.5 \
+  lxml==4.7.1 \
+  flask-cors==3.0.10 \
+  beautifulsoup4==4.10.0 \
+  configparser==5.2.0 \
+  ipyevents==2.0.1 \
+  astroquery==0.4.5 \
+  astropy==5.0.1 \
+  && jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build \
+  && jupyter labextension install jupyter-matplotlib --no-build \
+  && jupyter labextension install jupyter-leaflet --no-build \
+  && jupyter lab build --minimize=False \
+  && python -m pip --no-cache-dir install pyesasky==1.9.2 \
+  && jupyter labextension install pyesasky --no-build \
+  && jupyter lab build --minimize=False \
+  && jupyter nbextension install --py pyesasky --sys-prefix \
+  && jupyter nbextension enable --py pyesasky --sys-prefix \
+  && jupyter lab build --minimize=False \
+  && ln -s /opt/miniconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
 #  && apt-get remove python3.6 -y \
 #  && apt-get install python3.8=3.8.0-3ubuntu1~18.04.2 -y \
 #  && apt-get remove python3-pip -y \
