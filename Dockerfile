@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 
 ENV PATH /opt/miniconda/bin:$PATH
-RUN echo "Updating python to 3.8"
+RUN echo "Updating python to 3.8" \
   && echo "/opt" \
   && ls -la /opt \
   && echo "/opt/miniconda" \
