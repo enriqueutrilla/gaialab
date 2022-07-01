@@ -10,7 +10,7 @@ RUN apt-get update \
   && echo "Path: $PATH" \
   && python3.8 -m pip install --no-cache-dir --upgrade pip==9.0.3 \
   && echo "Installing python dependencies" \
-#  && pip3 install --no-cache-dir --upgrade numpy==1.23.0 \
+  && pip3 install --no-cache-dir --upgrade -target /usr/local/lib/python3.8/dist-packages numpy==1.23.0 \
 #  && pip install --no-cache-dir --upgrade --upgrade-strategy eager -r /tmp/requirements.txt \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
