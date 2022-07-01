@@ -2,6 +2,10 @@ FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 
+RUN curl -fsSL -o Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+  && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda \
+  && rm -rf Miniconda3-latest-Linux-x86_64.sh
+
 ENV PATH /opt/miniconda/bin:$PATH
 RUN echo "Updating python to 3.8" \
   && echo "/opt" \
