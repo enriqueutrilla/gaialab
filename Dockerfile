@@ -17,7 +17,7 @@ RUN echo "Updating python to 3.8" \
   && conda init \
   && conda config --append channels conda-forge \
   && conda install -c anaconda python=3.8 \
-  && conda install -c anaconda nodejs=12.0.0 \
+  && conda install -c conda-forge nodejs=12.0.0 \
   && python -m pip --no-cache-dir install \
   jupyterlab==3.2.8 \
   jupyter_client==7.1.1 \
