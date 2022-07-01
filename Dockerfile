@@ -2,10 +2,11 @@ FROM registry.esa.int:5020/sepp/jl_base:v9.1915
 ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 
-RUN apt-get update \
-  && apt-get install --no-install-recommends -y nodejs=17.9.0 \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update \
+#  && apt-get install --no-install-recommends -y apt-transport-https \
+#  && apt-get install --no-install-recommends -y nodejs=17.9.0 \
+#  && apt-get clean \
+#  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL -o Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
   && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda \
@@ -51,7 +52,7 @@ RUN echo "Updating python to 3.8" \
   ipyevents==2.0.1 \
   astroquery==0.4.5 \
   astropy==5.0.1 \
-  && jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build \
+#  && jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build \
   && jupyter labextension install jupyter-matplotlib --no-build \
   && jupyter labextension install jupyter-leaflet --no-build \
   && jupyter lab build --minimize=False \
