@@ -3,14 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY ./requirements.txt /tmp/
 
 RUN apt-get update \
-  && apt-get install --no-install-recommends -y \
-  gcc g++ make \
-  build-essential --no-install-recommends apt-utils \
-  zip unzip curl git man wget make emacs vim \
-  libffi-dev libzbar-dev libzbar0 \
-  nodejs yarn\
-  software-properties-common coreutils \
-  python-xvfbwrapper python3-pytest-xvfb python3-xvfbwrapper xvfb \
+  && apt-get install --no-install-recommends -y nodejs=17.9.0 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
